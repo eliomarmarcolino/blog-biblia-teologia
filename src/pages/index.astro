@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaPlano from '../components/CtaPlano.astro';
+import PostMeta from '../components/PostMeta.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts, postUrl, SITE_NAME, CATEGORIAS, url } from '../lib/site';
+
+const posts = await getPosts();
+const [destaque, ...demais] = posts;
+---
+<BaseLayout>
+  <section class="hero container" aria-labelledby="titulo-home">
+    <p class="eyebrow">Eliomar Marcolino</p>
+    <h1 id="titulo-home">{SITE_NAME}</h1>
+    <p class="lead">
+      Estudos bíblicos e notícias do mundo evangélico, com linguagem simples e
+      olhar devocional — para ler a Palavra com mais contexto e mais fé.
+    </p>
+    <hr class="rule" />
+  </section>
+
+  <div class="container">
+    {destaque ? (
+      <section class="section" aria-labelledby="titulo-destaque">
+        <h2 id="titulo-destaque" class="section-title">Em destaque</h2>
+        <article class="featured">
+          <PostMeta post={destaque} />
+          <h3 class="card-title"><a href={postUrl(destaque)}>{destaque.data.title}</a></h3>
+          <p class="card-desc">{destaque.data.description}</p>
+          <p style="margin:1.2rem 0 0"><a class="read-more" href={postUrl(destaque)}>Ler o estudo <span aria-hidden="true">→</span><span class="sr-only">: {destaque.data.title}</span></a></p>
+        </article>
+      </section>
+    ) : (
+      <section class="section" aria-labelledby="titulo-destaque">
+        <h2 id="titulo-destaque" class="section-title">Publicações</h2>
+        <p class="empty">Em breve, os primeiros estudos e notícias.</p>
+      </section>
+    )}
+
+    {demais.length > 0 && (
+      <section class="section" aria-labelledby="titulo-recentes">
+        <h2 id="titulo-recentes" class="section-title">Publicações recentes</h2>
+        <PostList posts={demais} />
+      </section>
+    )}
+
+    <section class="section" aria-label="Categorias">
+      <p class="meta" style="font-size:.95rem">
+        Navegue por:
+        {CATEGORIAS.map((c) => <a class="meta-cat" href={url(`categoria/${c.slug}/`)}>{c.nome}</a>)}
+      </p>
+    </section>
+
+    <CtaPlano />
+  </div>
+</BaseLayout>

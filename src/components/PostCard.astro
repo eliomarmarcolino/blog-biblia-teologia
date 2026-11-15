@@ -1,0 +1,13 @@
+---
+import type { Post } from '../lib/site';
+import { postUrl } from '../lib/site';
+import PostMeta from './PostMeta.astro';
+interface Props { post: Post; headingLevel?: 'h2' | 'h3' }
+const { post, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
+---
+<article class="card">
+  <PostMeta post={post} />
+  <H class="card-title"><a href={postUrl(post)}>{post.data.title}</a></H>
+  <p class="card-desc">{post.data.description}</p>
+</article>

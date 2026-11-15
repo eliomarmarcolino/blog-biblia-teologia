@@ -1,0 +1,16 @@
+---
+import { SITE_NAME, INSTAGRAM_URL, INSTAGRAM_HANDLE, url } from '../lib/site';
+import InstagramIcon from './InstagramIcon.astro';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p><a href={url('')} class="footer-brand">{SITE_NAME}</a> · Eliomar Marcolino · {year}</p>
+    <p>
+      <a class="insta" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+        <InstagramIcon size={16} /><span>{INSTAGRAM_HANDLE}</span><span class="sr-only"> no Instagram (abre em nova aba)</span>
+      </a>
+      · <a href={url('rss.xml')}>RSS</a>
+    </p>
+  </div>
+</footer>

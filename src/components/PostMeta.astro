@@ -1,0 +1,14 @@
+---
+import type { Post } from '../lib/site';
+import { formatDate, categoriaSlug, url } from '../lib/site';
+import DraftBadge from './DraftBadge.astro';
+interface Props { post: Post }
+const { post } = Astro.props;
+const { pubDate, categoria, draft } = post.data;
+---
+<p class="meta">
+  <a class="meta-cat" href={url(`categoria/${categoriaSlug(categoria)}/`)}>{categoria}</a>
+  <span aria-hidden="true">·</span>
+  <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+  {draft && <DraftBadge />}
+</p>

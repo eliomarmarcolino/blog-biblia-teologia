@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaPlano from '../../components/CtaPlano.astro';
+import PostMeta from '../../components/PostMeta.astro';
+import TagList from '../../components/TagList.astro';
+import { getPosts, type Post } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props as { post: Post };
+const { Content } = await render(post);
+---
+<BaseLayout title={post.data.title} description={post.data.description} noindex={post.data.draft}>
+  <article class="container narrow">
+    <header class="post-header">
+      <PostMeta post={post} />
+      <h1>{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    <TagList tags={post.data.tags} />
+    <CtaPlano />
+  </article>
+</BaseLayout>

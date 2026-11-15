@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaPlano from '../components/CtaPlano.astro';
+import InstagramIcon from '../components/InstagramIcon.astro';
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../lib/site';
+---
+<BaseLayout title="Sobre" description="Sobre o Bíblia e Teologia e Eliomar Marcolino.">
+  <div class="container narrow">
+    <header class="page">
+      <p class="eyebrow">Sobre</p>
+      <h1>Bíblia e Teologia</h1>
+    </header>
+    <div class="prose">
+      <p>
+        <strong>Eliomar Marcolino</strong> é estudante de teologia, casado e pai de quatro filhos.
+        Ele produz conteúdo bíblico com linha evangélica e devocional.
+      </p>
+      <p>
+        Este blog reúne estudos e notícias com o mesmo propósito: ajudar você a ler
+        a Bíblia com mais contexto e a aplicá-la com fidelidade.
+      </p>
+      <p>
+        Acompanhe também no Instagram:
+        <a class="insta" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+          <InstagramIcon size={18} /><span>{INSTAGRAM_HANDLE}</span><span class="sr-only"> (abre em nova aba)</span>
+        </a>
+      </p>
+    </div>
+    <CtaPlano />
+  </div>
+</BaseLayout>

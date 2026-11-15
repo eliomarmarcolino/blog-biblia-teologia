@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import CtaPlano from '../../components/CtaPlano.astro';
+import { CATEGORIAS, getPosts } from '../../lib/site';
+
+export function getStaticPaths() {
+  return CATEGORIAS.map((c) => ({ params: { categoria: c.slug }, props: { nome: c.nome } }));
+}
+const { nome } = Astro.props;
+const posts = (await getPosts()).filter((p) => p.data.categoria === nome);
+---
+<BaseLayout title={nome} description={`${nome} — publicações do Bíblia e Teologia.`}>
+  <div class="container">
+    <header class="page">
+      <p class="eyebrow">Categoria</p>
+      <h1>{nome}</h1>
+    </header>
+    <PostList posts={posts} headingLevel="h2" />
+    <CtaPlano />
+  </div>
+</BaseLayout>

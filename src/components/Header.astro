@@ -1,0 +1,34 @@
+---
+import { SITE_NAME, INSTAGRAM_URL, url } from '../lib/site';
+import InstagramIcon from './InstagramIcon.astro';
+import Logo from './Logo.astro';
+
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const links = [
+  { href: url(''), label: 'Início' },
+  { href: url('categoria/estudos/'), label: 'Estudos' },
+  { href: url('categoria/noticias/'), label: 'Notícias' },
+  { href: url('sobre/'), label: 'Sobre' },
+];
+const isCurrent = (href: string) => (href.replace(/\/+$/, '') || '/') === current;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={url('')}>
+      <span class="brand-mark"><Logo /></span>
+      <span class="brand-name">{SITE_NAME}</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-list">
+        {links.map((l) => (
+          <li><a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a></li>
+        ))}
+        <li>
+          <a class="insta" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            <InstagramIcon size={18} /><span>Instagram</span><span class="sr-only"> (abre em nova aba)</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
