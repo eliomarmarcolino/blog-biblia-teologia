@@ -15,7 +15,7 @@ Poucos versículos são tão conhecidos e tão necessários. Pais exaustos, trab
 
 O convite de Mateus 11:28 vem logo depois de uma oração de Jesus:
 
-> Naquela ocasião, Jesus orou da seguinte maneira: "Pai, Senhor dos céus e da terra, eu te agradeço porque escondeste estas coisas dos que se consideram sábios e instruídos e as revelaste aos que são como crianças." (Mateus 11:25, NVT)
+> Naquela ocasião, Jesus orou da seguinte maneira: "Pai, Senhor dos céus e da terra, eu te agradeço porque escondeste estas coisas dos que se consideram sábios e instruídos e as revelaste aos que são como crianças. Sim, Pai, foi do teu agrado fazê-lo assim." (Mateus 11:25-26, NVT)
 
 Em seguida, Jesus afirma que ninguém conhece verdadeiramente o Pai, a não ser o Filho e aqueles a quem o Filho o quiser revelar (Mt 11:27). Só depois disso vem o "venham a mim". O descanso que Jesus oferece está ligado a conhecer a Deus por meio dele. Não é um conselho de bem-estar; é um convite para uma relação.
 
@@ -43,7 +43,7 @@ As palavras usadas aqui no grego ajudam: "eu lhes darei descanso" vem do verbo *
 
 A expressão "descanso para a alma" lembra uma palavra de Deus pelo profeta Jeremias:
 
-> Assim diz o Senhor: "Parem nas encruzilhadas e olhem ao redor, perguntem qual é o caminho antigo, o bom caminho; andem por ele e encontrarão descanso para a alma." (Jeremias 6:16, NVT)
+> Assim diz o Senhor: "Parem nas encruzilhadas e olhem ao redor, perguntem qual é o caminho antigo, o bom caminho; andem por ele e encontrarão descanso para a alma…" (Jeremias 6:16a, NVT)
 
 Em Jeremias, o povo recusou esse caminho (Jr 6:16b). Em Mateus, Jesus se apresenta como aquele em quem o descanso é encontrado. O bom caminho agora tem rosto e nome.
 
