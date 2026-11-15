@@ -9,9 +9,10 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/eliomar_marcolino/';
 export const INSTAGRAM_HANDLE = '@eliomar_marcolino';
 
 export const PLANO = {
-  titulo: 'Comece pelo Novo Testamento — plano grátis de 7 dias',
+  titulo:
+    '📖 Comece o plano grátis de 7 dias: 7 leituras do Novo Testamento, de Marcos a Filipenses.',
   corpo:
-    '7 leituras do Novo Testamento, de Marcos a Filipenses, com o contexto pra você entender o que está lendo.',
+    'Cada leitura traz o contexto, a ideia-chave e uma aplicação para o dia a dia.',
   botao: 'Quero o plano grátis',
   url: 'https://eliomarmarcolino22-s2417v.systeme.io/89ee3edb',
 };

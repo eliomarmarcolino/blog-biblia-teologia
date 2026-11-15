@@ -3,7 +3,9 @@ import { PLANO } from '../lib/site';
 ---
 <aside class="cta" aria-labelledby="cta-plano-titulo">
   <p class="cta-kicker">Plano de leitura</p>
-  <h2 id="cta-plano-titulo" class="cta-title">{PLANO.titulo}</h2>
+  <h2 id="cta-plano-titulo" class="cta-title">
+    <a href={PLANO.url} target="_blank" rel="noopener noreferrer">{PLANO.titulo}</a>
+  </h2>
   <p class="cta-body">{PLANO.corpo}</p>
   <a class="btn" href={PLANO.url} target="_blank" rel="noopener noreferrer">
     {PLANO.botao}<span class="sr-only"> (abre em nova aba)</span>
