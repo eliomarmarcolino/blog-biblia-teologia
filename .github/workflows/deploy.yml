@@ -1,8 +1,9 @@
-# Deploy para GitHub Pages — DESLIGADO por padrão.
-# Só roda manualmente (workflow_dispatch). Não há gatilho em push nem em pull_request.
-name: Deploy para GitHub Pages (manual)
+# Deploy automático para GitHub Pages a cada push na main (e manual).
+name: Deploy para GitHub Pages
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
