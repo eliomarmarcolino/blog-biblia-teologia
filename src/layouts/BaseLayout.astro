@@ -30,6 +30,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
     <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href={url('rss.xml')} />
     <link rel="sitemap" href={url('sitemap-index.xml')} />

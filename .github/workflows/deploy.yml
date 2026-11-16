@@ -38,7 +38,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Coerente com astro.config.mjs (SITE e BASE).
+          # SITE/BASE vêm das configurações do Pages (configure-pages), não são fixos aqui:
+          # hoje github.io + /blog-biblia-teologia; com o domínio próprio configurado no
+          # Pages, passam a ser https://eliomarmarcolino.com.br e base vazia (raiz).
           SITE: ${{ steps.pages.outputs.origin }}
           BASE: ${{ steps.pages.outputs.base_path }}
 

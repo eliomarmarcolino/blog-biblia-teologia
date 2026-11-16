@@ -2,19 +2,21 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Publicação no GitHub Pages (project page):
-//   https://eliomarmarcolino.github.io/blog-biblia-teologia/
-const DEFAULT_SITE = 'https://eliomarmarcolino.github.io';
-const DEFAULT_BASE = '/blog-biblia-teologia';
+// Domínio próprio (GitHub Pages com domínio customizado), servido na raiz:
+//   https://eliomarmarcolino.com.br/
+// O arquivo public/CNAME (copiado para dist/CNAME) declara esse domínio.
+const DEFAULT_SITE = 'https://eliomarmarcolino.com.br';
+const DEFAULT_BASE = '/';
 
-// Overrides opcionais por variável de ambiente (ex.: domínio próprio no futuro).
-//   SITE=https://exemplo.com BASE= npm run build   → servido na raiz
+// Overrides opcionais por variável de ambiente. No GitHub Actions o workflow
+// passa SITE/BASE vindos de actions/configure-pages (as configurações do Pages).
+//   SITE=https://exemplo.com BASE=/subcaminho npm run build
 const SITE = process.env.SITE || DEFAULT_SITE;
-const BASE = process.env.BASE ?? DEFAULT_BASE;
+const BASE = process.env.BASE || DEFAULT_BASE;
 
 export default defineConfig({
   site: SITE,
-  base: BASE || '/',
+  base: BASE,
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
   integrations: [sitemap()],
