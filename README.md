@@ -2,13 +2,13 @@
 
 Blog estático de estudos bíblicos e notícias evangélicas de **Eliomar Marcolino** ([@eliomar_marcolino](https://www.instagram.com/eliomar_marcolino/)), feito com [Astro](https://astro.build).
 
-> ⚠️ **O site ainda NÃO está no ar.** Nada foi publicado, não existe repositório remoto e o deploy está desligado. A publicação depende do OK do Eliomar.
+> **Status:** no ar via GitHub Pages em `https://eliomarmarcolino.github.io/blog-biblia-teologia/`. O domínio próprio **`eliomarmarcolino.com.br`** está em preparação (branch `dominio-proprio`) e **ainda não está no ar** — o DNS ainda não foi configurado.
 
 ## Rodar localmente
 
 ```bash
 npm install
-npm run dev      # http://localhost:4321/blog-biblia-teologia/
+npm run dev      # http://localhost:4321/
 npm run build    # gera o site estático em dist/
 npm run preview  # serve o dist/ localmente
 ```
@@ -55,28 +55,31 @@ Definidas em `astro.config.mjs`:
 
 | Variável | Padrão | Uso |
 |---|---|---|
-| `SITE` | `https://eliomarmarcolino.github.io` | domínio do site (sitemap, RSS, canonical) |
-| `BASE` | `/blog-biblia-teologia` | subcaminho do site |
+| `SITE` | `https://eliomarmarcolino.com.br` | domínio do site (sitemap, RSS, canonical, `og:url`) |
+| `BASE` | `/` | subcaminho do site (raiz) |
 
-Padrão final: `https://eliomarmarcolino.github.io/blog-biblia-teologia/`.
+Padrão final: `https://eliomarmarcolino.com.br/`. O arquivo `public/CNAME` (copiado para `dist/CNAME`) contém `eliomarmarcolino.com.br`.
 
-Exemplo com domínio próprio na raiz:
+Para gerar com outro endereço/subcaminho, sobrescreva no ambiente:
 
 ```bash
-SITE=https://www.meudominio.com.br BASE=/ npm run build
+SITE=https://exemplo.com BASE=/subcaminho npm run build
 ```
 
 Os links internos usam `import.meta.env.BASE_URL` (função `url()` em `src/lib/site.ts`), então funcionam com qualquer `BASE`.
 
-## Publicar no GitHub Pages (quando aprovado)
+## Publicação (GitHub Pages via Actions)
 
-O repositório é **privado** e o GitHub Pages está **desligado**. O workflow de deploy fica guardado fora da pasta de workflows, em `deploy/github-pages-deploy.yml`, então nada roda nem é publicado.
+O deploy é feito pelo workflow `.github/workflows/deploy.yml` (fonte do Pages: **GitHub Actions**). Ele roda a cada push na `main` e também manualmente (**Actions → “Deploy para GitHub Pages” → Run workflow**).
 
-Quando o Eliomar aprovar:
+No Actions, `SITE` e `BASE` **não** usam os padrões do `astro.config.mjs`: vêm das configurações do Pages via `actions/configure-pages` (`origin` e `base_path`). Por isso o domínio não é fixado no workflow:
 
-1. Lembre que, em conta gratuita, o GitHub Pages só publica a partir de repositório **público** (repo privado exige GitHub Pro).
-2. Mova `deploy/github-pages-deploy.yml` para `.github/workflows/deploy.yml` e faça o commit (pelo site do GitHub, ou por um login com o escopo `workflow`).
-3. No GitHub: **Settings → Pages → Source: GitHub Actions**.
-4. Rode o workflow manualmente em **Actions → “Deploy para GitHub Pages (manual)” → Run workflow**. Ele passa `SITE` e `BASE` automaticamente.
-5. (Opcional) Para publicar a cada push na `main`, acrescente `push: branches: [main]` no `on:` do workflow.
-6. Se o nome do repositório ou o domínio mudarem, confira `SITE`/`BASE`.
+- **Hoje** (sem domínio customizado no Pages): o build sai para o endereço `github.io` com o subcaminho do repositório.
+- **Depois** que o domínio customizado for configurado no Pages: o build passa a sair para `https://eliomarmarcolino.com.br` na raiz, sem mudar o workflow.
+
+### Passos para ativar o domínio próprio (ainda não feitos)
+
+1. No Registro.br, configurar o DNS: registros `A`/`AAAA` do apex `eliomarmarcolino.com.br` para os IPs do GitHub Pages e `CNAME` de `www` para `eliomarmarcolino.github.io`.
+2. Mesclar a branch `dominio-proprio` na `main` (traz `public/CNAME` e os novos padrões).
+3. Em **Settings → Pages → Custom domain**, informar `eliomarmarcolino.com.br`, aguardar a verificação do DNS e marcar **Enforce HTTPS**.
+4. Conferir o próximo deploy: canonical, RSS e sitemap devem apontar para `https://eliomarmarcolino.com.br/`.
