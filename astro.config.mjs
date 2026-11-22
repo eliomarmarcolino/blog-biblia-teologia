@@ -19,5 +19,14 @@ export default defineConfig({
   base: BASE,
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // O app do devocional (public/devocional/sermao-do-monte/) é "unlisted":
+      // nunca deve aparecer no sitemap. Filtra pelo pathname, não pelo host.
+      filter: (page) => {
+        const path = new URL(page).pathname.replace(/\/+$/, '');
+        return !path.endsWith('/devocional/sermao-do-monte');
+      },
+    }),
+  ],
 });
