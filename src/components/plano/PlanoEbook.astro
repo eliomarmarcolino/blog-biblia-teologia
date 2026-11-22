@@ -1,0 +1,41 @@
+---
+/** Bloco do ebook — só é exibido (pelo script da /plano) após concluir o plano. */
+import { PLANO_EBOOK as ebook } from '../../data/plano';
+
+interface Props { id: string }
+const { id } = Astro.props;
+---
+<aside class="plano-ebook" aria-labelledby={`${id}-titulo`}>
+  <p class="plano-ebook-kicker" id={`${id}-titulo`}>Para continuar</p>
+  <p class="plano-ebook-texto">{ebook.texto}</p>
+  <a class="plano-ebook-btn" href={ebook.url} target="_blank" rel="noopener noreferrer">
+    {ebook.botao} · {ebook.preco}<span class="sr-only"> (abre em nova aba)</span>
+  </a>
+</aside>
+
+<style>
+  .plano-ebook {
+    margin: 1.5rem 0 .5rem;
+    background: var(--surface-2);
+    border: 1px solid var(--gold-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.2rem 1.35rem;
+  }
+  .plano-ebook-kicker {
+    font-family: var(--font-title); font-size: .78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .14em; color: var(--gold);
+    margin-bottom: .4rem;
+  }
+  .plano-ebook-texto { font-size: 1.1rem; line-height: 1.55; margin-bottom: 1rem; }
+  .plano-ebook-btn {
+    display: flex; align-items: center; justify-content: center; min-height: 3rem;
+    width: 100%; text-align: center; text-decoration: none;
+    background: transparent; color: var(--gold);
+    border: 2px solid var(--gold); border-radius: 12px; padding: .7rem 1rem;
+    font-family: var(--font-title); font-weight: 600; font-size: 1rem;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .plano-ebook-btn:hover { background: var(--gold); color: var(--on-gold); }
+  .plano-ebook-btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .plano-ebook-btn { transition: none; } }
+</style>
