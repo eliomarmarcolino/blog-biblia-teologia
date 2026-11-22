@@ -9,7 +9,8 @@
  * com a estrutura do artifact interativo. Conteúdo ainda em revisão teológica.
  *
  * Regras: a passagem é só a referência (o guia não reproduz o texto bíblico);
- * não acrescentar aspas novas nem rótulo de versão (NVT/ARA).
+ * não acrescentar aspas nem rótulo de versão por conta própria;
+ * citações inseridas na revisão teológica mantêm aspas e rótulo exatamente como revisados.
  */
 
 export interface DiaPlano {
@@ -114,24 +115,24 @@ export const PLANO_DIAS: DiaPlano[] = [
       'Mateus apresenta Jesus como o Messias prometido. No início do Sermão do Monte, Jesus descreve o caráter de quem pertence ao Reino — não uma lista de privilégios, mas um jeito de viver que contrasta com o do mundo.',
     ],
     ideiaChave:
-      'Deus chama de bem-aventurados os que o mundo muitas vezes ignora: os humildes, os que choram, os misericordiosos, os que têm fome de justiça. Quem segue Jesus é chamado a ser sal e luz: preservar o que é bom e tornar visível a bondade de Deus.',
+      'Deus chama de bem-aventurados os que o mundo muitas vezes ignora: os pobres de espírito, os que choram, os mansos, os que têm fome e sede de justiça, os misericordiosos. Quem segue Jesus é chamado a ser sal e luz: preservar o que é bom e viver de modo que outros vejam as boas obras e glorifiquem o Pai (Mt 5:16).',
     perguntas: [
       'Qual das bem-aventuranças mais fala à sua vida nesta semana?',
       'O que seria, de forma concreta, ser sal e luz no seu lar ou no seu trabalho?',
     ],
     aplicacao:
-      'Escolha uma pessoa próxima e pratique hoje um gesto simples de misericórdia ou encorajamento — sem anunciar, só fazer.',
+      'Escolha uma pessoa próxima e pratique hoje um gesto simples de misericórdia ou encorajamento — sem buscar elogio para você, para que Deus seja glorificado (Mt 5:16).',
   },
   {
     numero: 4,
     titulo: 'O Deus que busca o perdido',
     passagem: 'Lucas 15',
     contexto: [
-      'Lucas destaca a compaixão de Jesus pelos que estavam à margem. Os líderes religiosos o criticavam por receber pecadores. Ele responde com três parábolas: a ovelha perdida, a moeda perdida e o filho que voltou para casa.',
+      'Lucas destaca a compaixão de Jesus pelos que estavam à margem. Publicanos e pecadores se aproximavam para ouvi-lo, e os fariseus e escribas murmuravam: “Este recebe pecadores e come com eles” (Lc 15:1-2, ARC). Ele responde com três parábolas: a ovelha perdida, a moeda perdida e o pai com dois filhos.',
       'Leia o capítulo inteiro: são três histórias curtas que se complementam.',
     ],
     ideiaChave:
-      'Deus não espera o perdido se achar sozinho. Ele busca, encontra e celebra. O pai corre ao encontro do filho que volta — e também sai para o filho mais velho, que estava perto de casa, mas longe do coração do pai.',
+      'Deus não espera o perdido se achar sozinho. Ele busca, encontra e celebra. O pai corre ao encontro do filho que volta — e também sai para o filho mais velho, que estava perto de casa, mas com o coração longe do pai, como os que murmuravam contra Jesus (v. 2, 28-32).',
     perguntas: [
       'Com qual personagem você mais se identifica hoje: o que se afastou, o que ficou, ou quem observa de fora?',
       'O que estas parábolas revelam sobre o coração de Deus em relação a você?',
@@ -147,7 +148,7 @@ export const PLANO_DIAS: DiaPlano[] = [
       'Depois de confrontar cidades que viram seus milagres e não se arrependeram, Jesus faz um convite surpreendente. Não chama primeiro os fortes e autossuficientes, mas os cansados e sobrecarregados.',
     ],
     ideiaChave:
-      'O descanso que Jesus oferece não é fuga da vida. É um jugo diferente: aprender com Aquele que é “manso e humilde de coração”. Seguir Jesus alivia o peso que nós — e uma religião sem graça — colocamos sobre os próprios ombros.',
+      'O descanso que Jesus oferece não é fuga da vida. É um jugo diferente: aprender com Aquele que é “manso e humilde de coração” (Mt 11:29, ARA). Seguir Jesus alivia o peso que nós — e uma religião sem graça — colocamos sobre os próprios ombros.',
     perguntas: [
       'Quais pesos você tem carregado sozinho nestes dias?',
       'O que mudaria se você trouxesse esses pesos a Jesus, em vez de tentar sustentá-los só com as próprias forças?',
@@ -179,7 +180,7 @@ export const PLANO_DIAS: DiaPlano[] = [
       'Paulo escreve aos cristãos de Filipos de uma prisão, não de um palco de sucesso. Mesmo assim, a carta transborda alegria. Neste trecho, ele ensina uma fé que se pratica na ansiedade, na necessidade e também na fartura.',
     ],
     ideiaChave:
-      'A alegria cristã não depende das circunstâncias. A paz de Deus guarda o coração de quem ora com gratidão. E o contentamento de Paulo — “tudo posso naquele que me fortalece” — não é autoajuda: é dependência de Cristo em qualquer situação.',
+      'A alegria cristã não depende das circunstâncias. A paz de Deus guarda o coração de quem ora com gratidão. E o contentamento de Paulo — “tudo posso naquele que me fortalece” (Fp 4:13, ARA) — não é autoajuda: é dependência de Cristo em qualquer situação.',
     perguntas: [
       'Em que área da sua vida a ansiedade tem falado mais alto do que a oração?',
       'O que significaria aprender o contentamento que Paulo descreve — tanto na falta quanto na fartura?',
